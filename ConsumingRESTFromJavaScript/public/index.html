@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
@@ -27,7 +27,12 @@
 
                 var zip = $('#zip').val();
                 var uri = "https://dawa.aws.dk/postnumre/";
-
+                /**
+                 * Update a web page without reloading the page
+                 * Request data from a server - after the page has loaded
+                 * Receive data from a server - after the page has loaded
+                 * Send data to a server - in the background
+                 * /
                 //$.ajax({
                 //    url: uri + zip,
                 //    type: 'GET',
@@ -45,6 +50,11 @@
                 //        $('#result').addClass('alert-danger');
                 //    }
                 //});
+
+                /**
+                 * Library til at lave kald over Http (Axios bruges faktisk specifikt til Http)
+                 * Axios a Javascript library used to make HTTP requests from node. js or XMLHttpRequests from the browser
+                 */
 
                 axios.get(uri + zip)
                     .then(result => {
